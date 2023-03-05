@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/sap-spartacus-demo",
+            "outputPath": "dist/sap-spartacus-demo/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -116,6 +116,59 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/sap-spartacus-demo/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "sap-spartacus-demo:build:development",
+              "serverTarget": "sap-spartacus-demo:server:development"
+            },
+            "production": {
+              "browserTarget": "sap-spartacus-demo:build:production",
+              "serverTarget": "sap-spartacus-demo:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "sap-spartacus-demo:build:production",
+              "serverTarget": "sap-spartacus-demo:server:production"
+            },
+            "development": {
+              "browserTarget": "sap-spartacus-demo:build:development",
+              "serverTarget": "sap-spartacus-demo:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

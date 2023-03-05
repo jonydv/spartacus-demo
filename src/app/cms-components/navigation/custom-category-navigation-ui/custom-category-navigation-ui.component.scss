@@ -1,0 +1,6 @@
+@import "~@spartacus/styles/scss/cxbase/mixins";
+@import "~@spartacus/styles/scss/components/content/navigation/_navigation-ui.scss";
+
+:host {
+  @extend %cx-navigation-ui;
+}

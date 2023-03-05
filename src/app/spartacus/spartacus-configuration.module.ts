@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { translationChunksConfig, translations } from '@spartacus/assets';
-import { environment } from '../../environments/environment';
 import {
   FeaturesConfig,
   I18nConfig,
@@ -13,6 +12,7 @@ import {
   layoutConfig,
   mediaConfig,
 } from '@spartacus/storefront';
+import { environment } from '../../environments/environment';
 
 @NgModule({
   declarations: [],

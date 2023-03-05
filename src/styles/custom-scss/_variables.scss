@@ -1,0 +1,51 @@
+$font-family-omb: "Montserrat", Helvetica, Arial, sans-serif;
+$font-family-piero: "GothamSSm", Helvetica, Arial, sans-serif;
+
+$blue-dark: #070b1a;
+$blue-dark-cyan: #04203b;
+$blue: #07385a;
+$blue-light: #38b2cd;
+$orange: #ff6d00;
+$seashell: #f9f8f7;
+$wildsand: #e7e5e1;
+$arrowtown: #887c69;
+$coffee: #6d6455;
+$mondo: #544f46;
+$gray-dark: #333;
+$gray-nobel: #c4c4c4;
+$gray: #ececec;
+$gray-light: #fafafa;
+$gray-a50: rgba($gray, 0.5);
+$gray-subdued: #c9cbd3;
+$white: #fff;
+$white-a40: rgba($white, 0.4);
+$white-a10: rgba($white, 0.1);
+$black: #000;
+$black-a50: rgba($black, 0.5);
+$black-a15: rgba($black, 0.15);
+$black-a10: rgba($black, 0.1);
+$red: #ee1111;
+$red-persian: #c03030;
+$transparent: transparent;
+$cyan-dark: #1e7689;
+$violet: #3d0551;
+$gradient-lineal-cyan-dark-violet: linear-gradient(
+  90deg,
+  $violet 14%,
+  $cyan-dark 94%
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px,
+) !default;
+
+$transition-100: all 0.1s ease-in-out;
+$transition-300: all 0.3s ease-in-out;
+$transition-600: all 0.3s ease-in-out;
+
+$input-bg: $transparent;
