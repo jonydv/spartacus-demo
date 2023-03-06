@@ -30,6 +30,11 @@
                 "glob": "**/*",
                 "input": "./node_modules/@spartacus/smartedit/assets",
                 "output": "assets/"
+              },
+              {
+                "glob": "_redirects",
+                "input": "src",
+                "output": "/"
               }
             ],
             "styles": [
