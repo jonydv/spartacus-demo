@@ -1,0 +1,10 @@
+cx-page-layout {
+  &.navigation {
+    cx-page-slot {
+      &.SiteContext,
+      &.SiteLinks {
+        display: none;
+      }
+    }
+  }
+}

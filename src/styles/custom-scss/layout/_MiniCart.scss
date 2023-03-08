@@ -1,0 +1,26 @@
+@import "src/styles/custom-scss/mixins/media-querys.scss";
+@import "src/styles/custom-scss/variables/variables.scss";
+cx-page-layout {
+  &.header {
+    cx-page-slot {
+      &.MiniCart {
+        cx-mini-cart {
+          a {
+            background: transparent;
+            flex-direction: unset;
+            cx-icon {
+              svg {
+                fill: $primary;
+                width: 1.4375rem;
+                height: 1.25rem;
+              }
+            }
+            span {
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

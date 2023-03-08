@@ -1,0 +1,19 @@
+@import "src/styles/custom-scss/mixins/media-querys.scss";
+@import "src/styles/custom-scss/variables/variables.scss";
+
+cx-page-layout {
+  &.header {
+    cx-page-slot {
+      &.SiteLogo {
+        cx-media {
+          background: url("../../../assets/images/site-logo.png");
+          width: 134px;
+          height: 34px;
+          img {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

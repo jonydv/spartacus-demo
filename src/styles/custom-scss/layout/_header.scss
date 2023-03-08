@@ -1,0 +1,19 @@
+@import "src/styles/custom-scss/mixins/media-querys.scss";
+@import "src/styles/custom-scss/variables/variables.scss";
+header {
+  background-color: $yellow;
+  &.is-expanded {
+    background-color: $yellow;
+    &::after {
+      background-color: $yellow;
+    }
+  }
+}
+cx-page-layout {
+  &.header {
+    background-color: $yellow;
+    @include desktop {
+      height: 100px;
+    }
+  }
+}

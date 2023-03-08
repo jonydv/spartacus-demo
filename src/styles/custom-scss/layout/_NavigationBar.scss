@@ -1,0 +1,11 @@
+@import "src/styles/custom-scss/mixins/media-querys.scss";
+@import "src/styles/custom-scss/variables/variables.scss";
+cx-page-layout {
+  &.header {
+    cx-page-slot {
+      &.NavigationBar {
+        min-height: unset;
+      }
+    }
+  }
+}

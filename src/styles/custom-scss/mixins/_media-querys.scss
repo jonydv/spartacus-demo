@@ -1,0 +1,117 @@
+$extra-xxl: 1920px;
+$xxl: 1600px;
+$xl: 1366px;
+$lg: 1280px;
+$md: 992px;
+$sm: 576px;
+$xs: 0px;
+
+$mobile-width: $md;
+$notebook-width: $xl;
+$medium-width: $lg;
+$large-width: $xxl;
+$extra-large-width: $extra-xxl;
+
+@mixin mobile-sm {
+  @media (max-width: #{$sm - 1}) {
+    @content;
+  }
+}
+
+@mixin mobile-md {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: #{$mobile-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin small-desktop($pixels: 0px) {
+  @media (min-width: calc(#{$mobile-width} + #{$pixels})) {
+    @content;
+  }
+}
+
+// > 1280px
+@mixin medium-desktop {
+  @media (min-width: #{$medium-width}) {
+    @content;
+  }
+}
+
+// > 1366px
+@mixin notebook-desktop {
+  @media (min-width: calc(#{$notebook-width} + 1px)) {
+    @content;
+  }
+}
+
+// > 1600px
+@mixin large-desktop {
+  @media (min-width: #{$large-width}) {
+    @content;
+  }
+}
+
+// > 1920px
+@mixin extra-large-desktop {
+  @media (min-width: calc(#{$extra-large-width} + 1px) ) {
+    @content;
+  }
+}
+
+// Custom small desktop 992px to 1599px
+@mixin custom-small-desktop($pixels: 0px) {
+  @media (min-width: calc(#{$mobile-width} + #{$pixels})) and (max-width: calc(#{$large-width} - 1px)) {
+    @content;
+  }
+}
+
+// 992 px to 1280 px
+@mixin custom-desktops {
+  @media (min-width: $md) and (max-width: $lg) {
+    @content;
+  }
+}
+
+// 420px to 992px for mobiles large
+@mixin custom-mobile($pixels: 0px) {
+  @media (min-width: 420px) and (max-width: calc(#{$mobile-width} - 1px)) {
+    @content;
+  }
+}
+
+// 320px to 419px for small mobiles
+@mixin custom-small-mobile($pixels: 0px) {
+  @media (min-width: 320px) and (max-width: 419px) {
+    @content;
+  }
+}
+// 320px to 375px for mobiles extra small
+@mixin custom-extra-small-mobile {
+  @media (min-width: 320px) and (max-width: 375px) {
+    @content;
+  }
+}
+
+@mixin design-mobile {
+  @media (max-width: 428px) {
+    @content;
+  }
+}
