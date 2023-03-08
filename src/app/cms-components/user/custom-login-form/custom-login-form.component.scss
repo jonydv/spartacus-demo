@@ -1,0 +1,73 @@
+@import "~@spartacus/styles/scss/cxbase/mixins";
+@import "~@spartacus/user/account/styles/_login-form";
+@import "src/styles/custom-scss/variables/variables.scss";
+@import "src/styles/custom-scss/mixins/media-querys.scss";
+app-custom-login-form {
+  @extend %cx-login-form;
+  .close-modal {
+    display: flex;
+    justify-content: flex-end;
+    cx-icon {
+      font-size: 1.25rem;
+      cursor: pointer;
+      color: $primary-light;
+      &:hover {
+        color: $primary-light-hover;
+      }
+    }
+  }
+  form {
+    &.user-form {
+      &.from-modal {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+    a {
+      &.btn-link {
+        color: $primary-light;
+        &:hover {
+          color: $primary-light-hover;
+        }
+      }
+    }
+    button {
+      &.btn {
+        &.btn-block {
+          &.btn-primary {
+            background: $blue;
+            color: #ffffff;
+            border: none;
+          }
+          &.btn-secondary {
+            &.btn-register {
+              background: $light-blue;
+              color: $blue;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+ngb-modal-window {
+  &.login-modal {
+    .modal-content {
+      padding: 3.5rem;
+      max-width: 450px;
+      app-custom-login-form {
+        max-width: 100%;
+        // @include mobile {
+        //   max-width: 320px;
+        // }
+        label,
+        a,
+        button {
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+}

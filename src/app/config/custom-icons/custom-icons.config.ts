@@ -4,6 +4,7 @@ export const CustomIconsConfig: IconConfig = {
   icon: {
     symbols: {
       CART: 'CART',
+      USER: 'far fa-user',
     },
     resources: [
       {

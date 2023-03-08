@@ -1,0 +1,21 @@
+@import "src/styles/custom-scss/mixins/media-querys.scss";
+@import "src/styles/custom-scss/mixins/custom-scrollbar.scss";
+@import "src/styles/custom-scss/variables/variables.scss";
+:host {
+  display: flex;
+  column-gap: 0.5rem;
+  align-items: center;
+  cx-icon {
+    color: $primary;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+  .login-text {
+    color: $primary;
+    margin-bottom: 0;
+    &:hover {
+      color: $primary-light;
+      cursor: pointer;
+    }
+  }
+}

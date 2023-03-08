@@ -1,9 +1,14 @@
 @import "src/styles/custom-scss/mixins/media-querys.scss";
 @import "src/styles/custom-scss/variables/variables.scss";
 cx-page-layout {
-  &.header {
+  &.header,
+  &.navigation {
     cx-page-slot {
       &.SiteLogin {
+        @include mobile {
+          padding: 1rem;
+          background: $yellow;
+        }
         cx-login {
           a {
             color: $primary;
