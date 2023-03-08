@@ -1,77 +1,82 @@
-<div
-  *ngIf="flyout && node?.children.length > 1"
-  class="back is-open"
-  (click)="back()"
->
-  <span>
-    <cx-icon [type]="iconType.CARET_LEFT"></cx-icon>
-    {{ "common.back" | cxTranslate }}
-  </span>
-</div>
-
-<ng-container *ngFor="let child of node?.children">
-  <ng-container *ngTemplateOutlet="nav; context: { node: child, depth: 0 }">
-  </ng-container>
-</ng-container>
-
-<!-- we generate links in a recursive manner -->
-<ng-template #nav let-node="node" let-depth="depth">
-  <nav
-    (click)="toggleOpen($event)"
-    (mouseenter)="onMouseEnter($event)"
-    (keydown.space)="toggleOpen($event)"
-    (keydown.esc)="back()"
-  >
-    <cx-generic-link
-      *ngIf="
-        node.url && (!node.children || node.children?.length === 0);
-        else heading
-      "
-      [url]="node.url"
-      [target]="node.target"
-      [style]="node.styleAttributes"
-      [class]="node.styleClasses"
+<ng-container *ngIf="{ isMobile: isMobile$ | async } as data">
+  <div class="navigation-ui" *ngIf="node?.children.length > 1">
+    <nav
+      class="navigation-ui__nav"
+      *ngFor="let children of node?.children; index as i"
     >
-      {{ node.title }}
-      <cx-icon
-        *ngIf="flyout && node.children?.length > 0"
-        [type]="iconType.CARET_DOWN"
-      ></cx-icon>
-    </cx-generic-link>
-
-    <ng-template #heading>
-      <span [attr.tabindex]="flyout && (depth === 0 || node.url) ? 0 : -1">
-        {{ node.title }}
-        <cx-icon
-          *ngIf="flyout && node.children?.length > 0"
-          [type]="iconType.CARET_DOWN"
-        ></cx-icon>
-      </span>
-    </ng-template>
-
-    <!-- we add a wrapper to allow for better layout handling in CSS -->
-    <div class="wrapper" *ngIf="node.children?.length > 0">
       <cx-generic-link
-        *ngIf="node.url"
-        [url]="node.url"
-        [target]="node.target"
-        class="all"
-      >
-        {{ "navigation.shopAll" | cxTranslate : { navNode: node.title } }}
-      </cx-generic-link>
+        *ngIf="!data.isMobile; else isMobileNodeTitle"
+        class="navigation-ui__nav-a"
+        [url]="children?.url"
+        >{{ children?.title }}
+        <cx-icon
+          *ngIf="children?.children?.length > 0"
+          [type]="iconType.CARET_DOWN"
+        ></cx-icon
+      ></cx-generic-link>
+      <ng-template #isMobileNodeTitle>
+        <div class="navigation-ui__nav-mobile">
+          <cx-generic-link class="navigation-ui__nav-a" [url]="children?.url"
+            >{{ children?.title }}
+          </cx-generic-link>
+          <cx-icon
+            *ngIf="children?.children?.length > 0"
+            [type]="
+              childVisibility?.includes(i)
+                ? iconType.CARET_UP
+                : iconType.CARET_DOWN
+            "
+            (click)="toggleChildVisibility(i)"
+          ></cx-icon>
+        </div>
+      </ng-template>
+
       <div
-        class="childs"
-        [attr.depth]="getTotalDepth(node)"
-        [attr.wrap-after]="node.children?.length > wrapAfter ? wrapAfter : null"
-        [attr.columns]="getColumnCount(node.children?.length)"
+        class="navigation-ui__nav-wrapper"
+        [ngClass]="{ visible: childVisibility?.includes(i) }"
+        *ngIf="children?.children?.length > 0"
       >
-        <ng-container *ngFor="let child of node.children">
-          <ng-container
-            *ngTemplateOutlet="nav; context: { node: child, depth: depth + 1 }"
+        <cx-generic-link
+          class="navigation-ui__nav-wrapper-title"
+          [url]="children?.url"
+        >
+          {{
+            "navigation.shopAll" | cxTranslate : { navNode: children?.title }
+          }}
+        </cx-generic-link>
+        <div class="navigation-ui__nav-wrapper__children">
+          <div
+            class="navigation-ui__nav-wrapper__children-container"
+            [attr.wrap-after]="grandChild?.children?.length >= 10 ? 10 : null"
+            [attr.column-count]="
+              grandChild?.children?.length > 30
+                ? 4
+                : grandChild?.children?.length > 20
+                ? 3
+                : grandChild?.children?.length > 10
+                ? 2
+                : 1
+            "
+            *ngFor="let grandChild of children?.children"
           >
-          </ng-container>
-        </ng-container>
+            <cx-generic-link
+              class="navigation-ui__nav-wrapper__children-container__title"
+              [url]="grandChild?.url"
+              >{{ grandChild?.title }}
+            </cx-generic-link>
+            <div
+              class="navigation-ui__nav-wrapper__children-container__links"
+              *ngFor="let littleChild of grandChild?.children; index as in"
+            >
+              <cx-generic-link
+                class="navigation-ui__nav-wrapper__children-container__links-value"
+                [url]="littleChild?.url"
+                >{{ littleChild?.title }}
+              </cx-generic-link>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </nav>
-</ng-template>
+    </nav>
+  </div>
+</ng-container>
