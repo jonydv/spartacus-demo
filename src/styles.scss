@@ -2,12 +2,14 @@
 
 $styleVersion: 4.3;
 @import "~@spartacus/styles/index";
-@import "./styles/custom-scss/variables";
+@import "./styles/custom-scss/variables/variables";
+@import "./styles/custom-scss/components/index";
+@import "./styles/custom-scss/layout/index";
 
-:root {
-  --cx-color-dark: #fff159;
-  --cx-color-inverse: #333333;
-  --cx-color-secondary: #ffffff;
-  --cx-color-light: #33333399;
-  --cx-color-primary: #3483fa;
+html,
+body {
+  font-family: "Roboto", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
 }
