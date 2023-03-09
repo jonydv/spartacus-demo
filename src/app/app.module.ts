@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { CmsComponentsModule } from './cms-components/cms-components.module';
 import { SpartacusModule } from './spartacus/spartacus.module';
 import { ConfigModule } from './config/config.module';
+import { OutletsModule } from './outlets/outlets.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,7 @@ import { ConfigModule } from './config/config.module';
     CmsComponentsModule,
     BrowserTransferStateModule,
     ConfigModule,
+    OutletsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
