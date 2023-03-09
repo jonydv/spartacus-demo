@@ -1,4 +1,13 @@
-<cx-icon [type]="'USER'" (click)="openLoginModal()"></cx-icon>
-<p class="login-text" (click)="openLoginModal()">
-  {{ "loginForm.signIn" | cxTranslate }}
-</p>
+<ng-container *ngIf="user$ | async as user; else login">
+  <cx-icon [type]="'LOGOUT'" (click)="logout()"></cx-icon>
+  <p class="login-text">
+    {{ "miniLogin.userGreeting" | cxTranslate : { name: user.firstName } }}
+  </p>
+  <cx-page-slot position="HeaderLinks"></cx-page-slot>
+</ng-container>
+<ng-template #login>
+  <cx-icon [type]="'USER'" (click)="openLoginModal()"></cx-icon>
+  <p class="login-text login" (click)="openLoginModal()">
+    {{ "loginForm.signIn" | cxTranslate }}
+  </p>
+</ng-template>

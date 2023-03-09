@@ -1,7 +1,7 @@
 @import "src/styles/custom-scss/mixins/media-querys.scss";
 @import "src/styles/custom-scss/mixins/custom-scrollbar.scss";
 @import "src/styles/custom-scss/variables/variables.scss";
-:host {
+app-custom-login {
   display: flex;
   column-gap: 0.5rem;
   align-items: center;
@@ -16,6 +16,45 @@
     &:hover {
       color: $primary-light;
       cursor: pointer;
+    }
+  }
+  @include desktop {
+    position: relative;
+    .HeaderLinks {
+      position: absolute;
+      left: 1.5625rem;
+      cx-navigation {
+        cx-navigation-ui {
+          nav {
+            span {
+              opacity: 0;
+            }
+            .wrapper {
+              top: 3.125rem;
+              background: $primary;
+              color: $white;
+              border: transparent;
+              border-radius: 0.3125rem;
+              a:hover {
+                color: #ffffff99;
+              }
+              &::before {
+                content: "";
+                width: 0;
+                height: 0;
+                border: 0 solid transparent;
+                border-right-width: 14px;
+                border-left-width: 14px;
+                border-bottom: 14px solid $header-wrapper-background;
+                top: -8px;
+                left: 1.5rem;
+                position: absolute;
+                display: block;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

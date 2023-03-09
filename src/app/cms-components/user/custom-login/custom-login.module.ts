@@ -6,15 +6,24 @@ import {
   CmsConfig,
   GlobalMessageService,
   provideConfig,
+  UrlModule,
   WindowRef,
 } from '@spartacus/core';
-import { IconModule } from '@spartacus/storefront';
+import { IconModule, PageSlotModule } from '@spartacus/storefront';
 import { LoginFormComponentService } from '@spartacus/user/account/components';
 import { I18nModule } from '@spartacus/core';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [CustomLoginComponent],
-  imports: [CommonModule, IconModule, I18nModule],
+  imports: [
+    CommonModule,
+    IconModule,
+    I18nModule,
+    PageSlotModule,
+    RouterModule,
+    UrlModule,
+  ],
   providers: [
     provideConfig(<CmsConfig>{
       cmsComponents: {
@@ -29,5 +38,6 @@ import { I18nModule } from '@spartacus/core';
       deps: [AuthService, GlobalMessageService, WindowRef],
     },
   ],
+  exports: [CustomLoginComponent],
 })
 export class CustomLoginModule {}
