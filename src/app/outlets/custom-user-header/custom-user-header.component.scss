@@ -1,0 +1,7 @@
+@import "src/styles/custom-scss/mixins/media-querys.scss";
+
+:host {
+  @include desktop {
+    display: none;
+  }
+}
