@@ -39,7 +39,11 @@
     ></cx-form-errors>
   </label>
 
-  <a [routerLink]="{ cxRoute: 'forgotPassword' } | cxUrl" class="btn-link">
+  <a
+    [routerLink]="{ cxRoute: 'forgotPassword' } | cxUrl"
+    class="btn-link"
+    (click)="closeModal('close button')"
+  >
     {{ "loginForm.forgotPassword" | cxTranslate }}
   </a>
 
@@ -50,4 +54,13 @@
   >
     {{ "loginForm.signIn" | cxTranslate }}
   </button>
+
+  <a
+    [routerLink]="{ cxRoute: 'register' } | cxUrl"
+    class="btn-link"
+    (click)="closeModal('close button')"
+    *ngIf="fromModal"
+  >
+    {{ "loginForm.register" | cxTranslate }}
+  </a>
 </form>
