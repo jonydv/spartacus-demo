@@ -5,6 +5,7 @@ export const CustomIconsConfig: IconConfig = {
     symbols: {
       CART: 'CART',
       USER: 'far fa-user',
+      LOGOUT: 'fas fa-sign-out',
     },
     resources: [
       {
