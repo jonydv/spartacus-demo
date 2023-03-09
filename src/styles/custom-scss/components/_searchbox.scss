@@ -17,13 +17,13 @@ cx-page-layout {
               box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
               padding-top: 3px;
               background: #ffffff;
-              color: $primary-light;
+              color: $primary;
             }
           }
         }
         cx-searchbox label {
           @include mobile {
-            color: $primary-light;
+            color: $primary;
             input {
               border-bottom: none;
               background-color: #ffffff;

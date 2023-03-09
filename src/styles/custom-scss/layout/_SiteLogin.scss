@@ -8,6 +8,48 @@ cx-page-layout {
         @include mobile {
           padding: 1rem;
           background: $yellow;
+          .login-text {
+            display: none;
+            &.login {
+              display: initial;
+            }
+          }
+          cx-icon {
+            &.fa-sign-out {
+              display: none;
+            }
+          }
+          .HeaderLinks {
+            cx-navigation {
+              cx-navigation-ui {
+                nav {
+                  span {
+                    padding: 0;
+                    border: none;
+                    text-transform: capitalize;
+                    display: grid;
+                    width: 100%;
+                    grid-template-columns: 1fr 0.7fr;
+                    font-weight: 400;
+                    color: $primary-light;
+                    &:hover {
+                      color: $primary-light;
+                    }
+                    cx-icon,
+                    cx-icon::before {
+                      font-size: 1.125rem;
+                    }
+                  }
+                  .wrapper {
+                    .childs {
+                      font-size: 1rem;
+                      color: $primary;
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
         cx-login {
           a {

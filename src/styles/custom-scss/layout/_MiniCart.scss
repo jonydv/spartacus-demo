@@ -4,7 +4,16 @@ cx-page-layout {
   &.header {
     cx-page-slot {
       &.MiniCart {
+        @include mobile {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          flex-wrap: nowrap;
+        }
         cx-mini-cart {
+          @include mobile {
+            margin-inline-start: 0;
+          }
           a {
             background: transparent;
             flex-direction: unset;
@@ -17,6 +26,29 @@ cx-page-layout {
             }
             span {
               color: $primary;
+            }
+            .count {
+              width: 1.5rem;
+              height: 1.5rem;
+              margin-bottom: 1.25rem;
+              font-size: 0.875rem;
+              background: $white;
+              border-radius: 50%;
+              display: grid;
+              place-content: center;
+              padding: 0;
+            }
+          }
+        }
+        app-custom-login {
+          @include desktop {
+            display: none;
+          }
+
+          @include mobile {
+            .login-text,
+            .HeaderLinks {
+              display: none;
             }
           }
         }
