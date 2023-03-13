@@ -2,9 +2,10 @@
 @import "src/styles/custom-scss/variables/variables.scss";
 cx-page-layout {
   &.LandingPage2Template {
+    max-width: 100%;
     cx-page-slot {
       &.Section1 {
-        max-width: 1600px;
+        max-width: 100%;
         margin: 0 auto 1rem auto;
       }
       &.Section2A,
@@ -14,11 +15,24 @@ cx-page-layout {
           grid-template-columns: 1fr 1fr;
           column-gap: 1rem;
           max-width: 600px;
-          cx-banner {
+          app-custom-banner {
             cx-generic-link {
               cx-media {
                 img {
                   border-radius: 0.375rem;
+                }
+              }
+            }
+          }
+        }
+        @include mobile {
+          app-custom-banner {
+            cx-generic-link {
+              cx-media {
+                img {
+                  display: flex;
+                  height: auto;
+                  width: 100%;
                 }
               }
             }
@@ -52,11 +66,38 @@ cx-page-layout {
             }
           }
         }
+        @include mobile {
+          margin-top: 1.5rem;
+          app-custom-banner {
+            cx-generic-link {
+              cx-media {
+                img {
+                  display: flex;
+                  height: auto;
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
       }
       &.Section5 {
         @include desktop {
           max-width: var(--cx-page-width-max);
           margin: 0 auto 1rem auto;
+        }
+        @include mobile {
+          app-custom-banner {
+            cx-generic-link {
+              cx-media {
+                img {
+                  display: flex;
+                  height: auto;
+                  width: 100%;
+                }
+              }
+            }
+          }
         }
       }
     }

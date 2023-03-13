@@ -1,0 +1,32 @@
+<ng-container
+  *ngIf="slot?.class?.trim() == 'Section1' && slot?.components?.[0]?.uid == 'ApparelUKHomepageSplashBannerComponent' && slot?.components?.[1]?.uid == 'ApparelUKHomepageSaveBannerComponent'; else defaultBanner"
+>
+  <ng-container
+    *ngIf="{ data: data$ | async, isMobile: isMobile$ | async } as component"
+  >
+    <div
+      class="carousel"
+      *ngIf="component.data.uid == 'ApparelUKHomepageSplashBannerComponent'"
+    >
+      <app-custom-banner-carousel
+        [data]="component.data"
+        [isMobile]="component.isMobile"
+      ></app-custom-banner-carousel>
+    </div>
+    <app-custom-mock-payment-banner
+      *ngIf="component.data.uid == 'ApparelUKHomepageSplashBannerComponent'"
+      [isMobile]="component.isMobile"
+    ></app-custom-mock-payment-banner>
+  </ng-container>
+</ng-container>
+<ng-template #defaultBanner>
+  <cx-generic-link
+    *ngIf="data$ | async as data"
+    [url]="data.urlLink"
+    [target]="getTarget(data)"
+  >
+    <p class="headline" *ngIf="data.headline" [innerHTML]="data.headline"></p>
+    <cx-media [container]="data.media"></cx-media>
+    <p class="content" *ngIf="data.content" [innerHTML]="data.content"></p>
+  </cx-generic-link>
+</ng-template>

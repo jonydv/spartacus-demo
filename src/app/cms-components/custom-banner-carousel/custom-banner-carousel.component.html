@@ -1,0 +1,41 @@
+<div class="carousel-container">
+  <swiper
+    [config]="swiperConfig"
+    [navigation]="{
+      nextEl: '.right-hero-banner',
+      prevEl: '.left-hero-banner'
+    }"
+    [autoplay]="{ delay: 7000 }"
+    [loop]="true"
+  >
+    <ng-container *ngFor="let banner of banners">
+      <ng-template swiperSlide>
+        <cx-generic-link [url]="data.urlLink">
+          <p
+            class="headline"
+            *ngIf="data.headline"
+            [innerHTML]="data.headline"
+          ></p>
+          <img [src]="banner.src" [alt]="banner.alt" />
+          <p
+            class="content"
+            *ngIf="data.content"
+            [innerHTML]="data.content"
+          ></p>
+        </cx-generic-link>
+      </ng-template>
+    </ng-container>
+  </swiper>
+  <button
+    class="left-hero-banner"
+    *ngIf="data.uid == 'ApparelUKHomepageSplashBannerComponent'"
+  >
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <button
+    class="right-hero-banner"
+    *ngIf="data.uid == 'ApparelUKHomepageSplashBannerComponent'"
+  >
+    <i class="fas fa-chevron-left"></i>
+  </button>
+</div>

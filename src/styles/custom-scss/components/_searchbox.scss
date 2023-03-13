@@ -21,13 +21,23 @@ cx-page-layout {
             }
           }
         }
-        cx-searchbox label {
-          @include mobile {
-            color: $primary;
-            input {
-              border-bottom: none;
+        cx-searchbox {
+          > * {
+            @include mobile {
               background-color: #ffffff;
-              color: $primary-light;
+            }
+          }
+          label {
+            @media screen and (max-width: 767px) {
+              background: transparent;
+            }
+            @include mobile {
+              color: $primary;
+              input {
+                border-bottom: none;
+                background-color: #ffffff;
+                color: $primary-light;
+              }
             }
           }
         }

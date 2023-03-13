@@ -24,8 +24,7 @@ export class CustomProductCarouselComponent
   implements OnInit
 {
   _componentData$: Observable<model> = this.componentData.data$.pipe(
-    filter((data) => data != null),
-    tap(console.log)
+    filter((data) => data != null)
   );
   isMobile$: Observable<boolean> = this.customBreakpointService.isMobile();
   swiperConfig: SwiperOptions = {

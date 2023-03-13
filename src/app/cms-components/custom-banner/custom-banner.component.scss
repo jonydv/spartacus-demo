@@ -1,0 +1,6 @@
+@import "~@spartacus/styles/scss/components/content/banner/_banner.scss";
+
+:host {
+  @extend %cx-banner;
+  max-width: 100%;
+}

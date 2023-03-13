@@ -5,6 +5,9 @@ cx-page-layout {
     cx-page-slot {
       &.NavigationBar {
         min-height: unset;
+        @include mobile {
+          display: none;
+        }
       }
     }
   }
