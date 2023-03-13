@@ -1,9 +1,4 @@
-import {
-  Component,
-  HostBinding,
-  OnInit,
-  ViewEncapsulation,
-} from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ModalService } from '@spartacus/storefront';
 import {
   LoginFormComponent,
@@ -29,7 +24,6 @@ export class CustomLoginFormComponent
   }
 
   ngOnInit(): void {
-    console.log(this.fromModal);
     this.style = this.fromModal ? false : true;
   }
 
