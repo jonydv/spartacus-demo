@@ -1,0 +1,64 @@
+@import "src/styles/custom-scss/mixins/media-querys.scss";
+@import "src/styles/custom-scss/variables/variables.scss";
+cx-page-layout {
+  &.LandingPage2Template {
+    cx-page-slot {
+      &.Section1 {
+        max-width: 1600px;
+        margin: 0 auto 1rem auto;
+      }
+      &.Section2A,
+      &.Section2B {
+        @include desktop {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          column-gap: 1rem;
+          max-width: 600px;
+          cx-banner {
+            cx-generic-link {
+              cx-media {
+                img {
+                  border-radius: 0.375rem;
+                }
+              }
+            }
+          }
+        }
+      }
+      &.Section2A {
+        @include desktop {
+          padding-right: 0.5rem;
+        }
+      }
+      &.Section2B {
+        @include desktop {
+          padding-left: 0.5rem;
+        }
+      }
+      &.Section4 {
+        @include desktop {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          column-gap: 1rem;
+          max-width: var(--cx-page-width-max);
+          margin: 0 auto;
+          cx-banner {
+            cx-generic-link {
+              cx-media {
+                img {
+                  border-radius: 0.375rem;
+                }
+              }
+            }
+          }
+        }
+      }
+      &.Section5 {
+        @include desktop {
+          max-width: var(--cx-page-width-max);
+          margin: 0 auto 1rem auto;
+        }
+      }
+    }
+  }
+}
