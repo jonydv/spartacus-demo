@@ -1,0 +1,19 @@
+<a
+  class="product-item"
+  *ngIf="product"
+  [routerLink]="{ cxRoute: 'product', params: product } | cxUrl"
+>
+  <cx-media
+    [container]="product.images?.PRIMARY"
+    format="product"
+    [alt]="product.name"
+  ></cx-media>
+  <div class="product-item__content">
+    <div class="product-item__content-price">
+      {{ product.price?.formattedValue }}
+    </div>
+    <h3 class="product-item__content-name">
+      {{ product.name }}
+    </h3>
+  </div>
+</a>
