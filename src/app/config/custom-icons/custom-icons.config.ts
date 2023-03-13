@@ -6,6 +6,8 @@ export const CustomIconsConfig: IconConfig = {
       CART: 'CART',
       USER: 'far fa-user',
       LOGOUT: 'fas fa-sign-out',
+      ARROW_LEFT: 'fas fa-chevron-left',
+      ARROW_RIGHT: 'fas fa-chevron-right',
     },
     resources: [
       {
