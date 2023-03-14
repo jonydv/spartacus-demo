@@ -5,6 +5,7 @@ cx-page-layout {
     max-width: 100%;
     cx-page-slot {
       &.Section1 {
+        order: 0;
         max-width: 100%;
         margin: 0 auto 1rem auto;
       }
@@ -40,22 +41,38 @@ cx-page-layout {
         }
       }
       &.Section2A {
+        order: 2;
         @include desktop {
           padding-right: 0.5rem;
         }
+        @include mobile {
+          margin-top: 1.5rem;
+        }
       }
       &.Section2B {
+        order: 3;
         @include desktop {
           padding-left: 0.5rem;
         }
       }
+      &.Section2C {
+        order: 4;
+      }
+      &.Section3 {
+        order: 1;
+        max-width: 100%;
+        app-product-carousel {
+          max-width: var(--cx-page-width-max);
+        }
+      }
       &.Section4 {
+        order: 5;
         @include desktop {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           column-gap: 1rem;
           max-width: var(--cx-page-width-max);
-          margin: 0 auto;
+          margin: 1.5rem auto 0 auto;
           cx-banner {
             cx-generic-link {
               cx-media {
@@ -82,11 +99,13 @@ cx-page-layout {
         }
       }
       &.Section5 {
+        order: 6;
         @include desktop {
           max-width: var(--cx-page-width-max);
           margin: 0 auto 1rem auto;
         }
         @include mobile {
+          margin-bottom: 1.5rem;
           app-custom-banner {
             cx-generic-link {
               cx-media {
