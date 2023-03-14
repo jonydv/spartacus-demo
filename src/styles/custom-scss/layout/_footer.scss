@@ -1,0 +1,22 @@
+@import "src/styles/custom-scss/mixins/media-querys.scss";
+@import "src/styles/custom-scss/variables/variables.scss";
+footer {
+  cx-page-layout {
+    &.footer {
+      cx-page-slot {
+        &.Footer {
+          background: $white;
+          color: $primary;
+          cx-footer-navigation a:hover {
+            color: $primary-light;
+          }
+          cx-anonymous-consent-open-dialog {
+            .btn-link {
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

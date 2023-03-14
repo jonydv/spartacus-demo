@@ -18,3 +18,8 @@ html {
   scroll-behavior: smooth;
   background: $background-grey;
 }
+cx-storefront {
+  cx-global-message {
+    z-index: 1060;
+  }
+}
