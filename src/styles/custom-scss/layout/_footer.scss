@@ -15,6 +15,30 @@ footer {
               color: $primary;
             }
           }
+          cx-anonymous-consent-management-banner {
+            .anonymous-consent-banner {
+              background-color: rgba(0, 0, 0, 0.9);
+              color: $white;
+              border-top: 5px solid rgba(0, 0, 0, 0.9);
+              .cx-banner-buttons {
+                .btn-action {
+                  color: $white;
+                  border-radius: 6px;
+                  background-color: rgba(65, 137, 230, 0.15);
+                  border: none;
+                  &:hover {
+                    filter: brightness(calc(84 / 100));
+                  }
+                }
+                .btn-primary {
+                  background-color: $blue;
+                  color: $white;
+                  border-radius: 6px;
+                  border: none;
+                }
+              }
+            }
+          }
         }
       }
     }
