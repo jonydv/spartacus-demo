@@ -32,7 +32,10 @@ export class CustomBannerCarouselComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (!changes?.['isMobile']?.firstChange && changes?.['data']?.firstChange) {
+    if (
+      !changes?.['isMobile']?.firstChange &&
+      (changes?.['data']?.firstChange || !changes?.['data'])
+    ) {
       this.isMobile = changes?.['isMobile']?.currentValue;
       this.initializeMockBanners();
     }
