@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import SwiperCore, { Autoplay, Navigation, SwiperOptions } from 'swiper';
 import { CmsBannerComponent } from '@spartacus/core';
+import { MockBanner } from '../../models/mock-banner.interface';
 SwiperCore.use([Navigation, Autoplay]);
 @Component({
   selector: 'app-custom-banner-carousel',
@@ -22,10 +23,7 @@ export class CustomBannerCarouselComponent implements OnInit, OnChanges {
     pagination: true,
     navigation: true,
   };
-  banners = [
-    { src: '../../../assets/banners/banner-1.webp', alt: 'ml 1' },
-    { src: '../../../assets/banners/banner-2.webp', alt: 'ml 2' },
-  ];
+  banners: MockBanner[];
 
   constructor() {}
 
@@ -34,7 +32,7 @@ export class CustomBannerCarouselComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (!changes?.['isMobile']?.firstChange) {
+    if (!changes?.['isMobile']?.firstChange && changes?.['data']?.firstChange) {
       this.isMobile = changes?.['isMobile']?.currentValue;
       this.initializeMockBanners();
     }
