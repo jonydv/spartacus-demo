@@ -1,0 +1,43 @@
+@import "~@spartacus/styles/scss/cxbase/mixins";
+@import "~@spartacus/styles/scss/components/product/list/_product-list.scss";
+@import "src/styles/custom-scss/mixins/media-querys.scss";
+@import "src/styles/custom-scss/variables/variables.scss";
+
+:host {
+  @extend %cx-product-list;
+  .container {
+    @include mobile {
+      padding: 0;
+      .row {
+        margin-right: 0;
+        margin-left: 0;
+        .col-12 {
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+      .cx-sorting {
+        &.top,
+        &.bottom {
+          padding: 0 10px;
+        }
+      }
+    }
+
+    .cx-product-container {
+      .row {
+        @include mobile {
+          margin: 0;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
+  app-product-card {
+    @include mobile {
+      padding: 0 !important;
+      flex: 50% !important;
+    }
+  }
+}
