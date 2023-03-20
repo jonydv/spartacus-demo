@@ -48,6 +48,16 @@ import { ProductCardModule } from '../product-card/product-card.module';
   providers: [
     provideConfig(<ViewConfig>defaultViewConfig),
     provideConfig(<CmsConfig>{
+      pagination: {
+        addFirst: true,
+        addLast: true,
+        addNext: true,
+        addStart: false,
+        addEnd: false,
+        addPrevious: true,
+        rangeCount: 1,
+        addDots: true,
+      },
       cmsComponents: {
         CMSProductListComponent: {
           component: CustomProductListComponent,
