@@ -2,13 +2,18 @@
   class="product-item"
   *ngIf="product"
   [routerLink]="{ cxRoute: 'product', params: product } | cxUrl"
+  [ngClass]="{ list: fromProductList }"
 >
   <cx-media
     [container]="product.images?.PRIMARY"
     format="product"
     [alt]="product.name"
+    [ngClass]="{ list: fromProductList }"
   ></cx-media>
-  <div class="product-item__content">
+  <cx-variant-style-icons
+    [variants]="product?.variantOptions"
+  ></cx-variant-style-icons>
+  <div class="product-item__content" *ngIf="!fromProductList; else fromList">
     <div class="product-item__content-price">
       {{ product.price?.formattedValue }}
     </div>
@@ -16,4 +21,18 @@
       {{ product.name }}
     </h3>
   </div>
+  <ng-template #fromList>
+    <div class="product-item__information">
+      <h3 class="product-item__information-title">
+        {{ product.name }}
+      </h3>
+      <p
+        class="product-item__information-summary"
+        [innerHTML]="product.summary?.slice(0, 60)"
+      ></p>
+      <div class="product-item__information-price">
+        {{ product.price?.formattedValue }}
+      </div>
+    </div>
+  </ng-template>
 </a>
