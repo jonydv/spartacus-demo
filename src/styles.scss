@@ -14,6 +14,31 @@ body {
   font-family: "Roboto", sans-serif;
   background: $background-grey;
 }
+
+cx-facet a.value:hover,
+cx-facet button.value:hover {
+  color: $primary-light-hover;
+}
+cx-facet.multi-select a.value:hover:not(.selected):before {
+  border-color: $primary-light-hover;
+}
+
+a {
+  color: $primary-light;
+}
+a:hover {
+  color: $primary-light-hover;
+}
+cx-active-facets a {
+  border: 1px solid $primary-light;
+  background: transparent;
+  border-radius: 6px;
+}
+cx-facet.multi-select a.value.selected:before {
+  background-color: transparent;
+  border-color: $primary;
+  color: $primary;
+}
 html {
   scroll-behavior: smooth;
   background: $background-grey;
