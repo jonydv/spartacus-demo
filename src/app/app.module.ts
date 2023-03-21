@@ -12,6 +12,7 @@ import { CmsComponentsModule } from './cms-components/cms-components.module';
 import { SpartacusModule } from './spartacus/spartacus.module';
 import { ConfigModule } from './config/config.module';
 import { OutletsModule } from './outlets/outlets.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,6 +27,7 @@ import { OutletsModule } from './outlets/outlets.module';
     BrowserTransferStateModule,
     ConfigModule,
     OutletsModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

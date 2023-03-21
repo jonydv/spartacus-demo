@@ -8,6 +8,7 @@ export const CustomIconsConfig: IconConfig = {
       LOGOUT: 'fas fa-sign-out',
       ARROW_LEFT: 'fas fa-chevron-left',
       ARROW_RIGHT: 'fas fa-chevron-right',
+      ARROW_TOP: 'fas fa-chevron-up',
     },
     resources: [
       {

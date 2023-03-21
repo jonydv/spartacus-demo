@@ -1,0 +1,8 @@
+<button
+  class="scroll-to-top"
+  (click)="scrollToTop()"
+  [hidden]="!showScrollButton"
+  [ngClass]="{ display: showScrollButton }"
+>
+  <cx-icon type="ARROW_TOP"></cx-icon>
+</button>
