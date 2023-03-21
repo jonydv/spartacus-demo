@@ -1,0 +1,12 @@
+@import "src/styles/custom-scss/mixins/media-querys.scss";
+@import "src/styles/custom-scss/variables/variables.scss";
+.row {
+  @include mobile {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    app-product-card {
+      padding: 0 !important;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import "src/styles/custom-scss/mixins/media-querys.scss";
+@import "src/styles/custom-scss/variables/variables.scss";
+@import "~@spartacus/styles/scss/cxbase/mixins";
+@import "~@spartacus/styles/scss/components/misc/pagination/_pagination.scss";
+
+:host {
+  @extend %cx-pagination;
+  a {
+    color: $primary;
+    border: 1px solid #dadada;
+
+    &:last-child {
+      border-inline-end: solid 1px #dadada;
+    }
+    &.current {
+      background-color: $blue;
+      border-color: $blue;
+      color: $white;
+      opacity: 1;
+    }
+    &:hover {
+      text-decoration: none;
+      background-color: #dadada;
+    }
+  }
+}

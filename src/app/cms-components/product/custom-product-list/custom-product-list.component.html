@@ -9,12 +9,12 @@
                 class="form-group cx-sort-dropdown col-12 col-lg-4 mr-auto"
               >
                 <span>{{ "productList.sortBy" | cxTranslate }}</span>
-                <cx-sorting
+                <app-custom-sorting
                   [sortOptions]="model.sorts"
                   (sortListEvent)="sortList($event)"
                   [selectedOption]="model.pagination.sort"
                   placeholder="{{ 'productList.sortBy' | cxTranslate }}"
-                ></cx-sorting>
+                ></app-custom-sorting>
               </label>
               <div *ngIf="!isInfiniteScroll" class="col-auto">
                 <div
@@ -23,11 +23,11 @@
                     'productList.productSearchPagination' | cxTranslate
                   "
                 >
-                  <cx-pagination
+                  <app-custom-pagination
                     [pagination]="model.pagination"
                     queryParam="currentPage"
                     [defaultPage]="0"
-                  ></cx-pagination>
+                  ></app-custom-pagination>
                 </div>
               </div>
               <div class="col-auto ml-auto ml-lg-0">
@@ -63,11 +63,11 @@
 
             <!-- Product list when using infinite scroll -->
             <ng-template #infiniteScroll>
-              <cx-product-scroll
+              <app-custom-product-scroll
                 [scrollConfig]="scrollConfig"
                 [model]="model"
                 [inputViewMode]="viewMode"
-              ></cx-product-scroll>
+              ></app-custom-product-scroll>
             </ng-template>
           </div>
           <div class="cx-sorting bottom">
@@ -76,12 +76,12 @@
                 class="form-group cx-sort-dropdown col-12 col-lg-4 mr-auto"
               >
                 <span>{{ "productList.sortBy" | cxTranslate }}</span>
-                <cx-sorting
+                <app-custom-sorting
                   [sortOptions]="model.sorts"
                   (sortListEvent)="sortList($event)"
                   [selectedOption]="model.pagination.sort"
                   placeholder="{{ 'productList.sortBy' | cxTranslate }}"
-                ></cx-sorting>
+                ></app-custom-sorting>
               </label>
               <div
                 *ngIf="!isInfiniteScroll"
@@ -91,11 +91,11 @@
                 "
               >
                 <div class="cx-pagination">
-                  <cx-pagination
+                  <app-custom-pagination
                     [pagination]="model.pagination"
                     queryParam="currentPage"
                     [defaultPage]="0"
-                  ></cx-pagination>
+                  ></app-custom-pagination>
                 </div>
               </div>
               <div class="col-auto ml-auto ml-lg-0">

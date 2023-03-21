@@ -24,6 +24,8 @@ import { RouterModule } from '@angular/router';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { ProductListModule } from '@spartacus/storefront';
 import { ProductCardModule } from '../product-card/product-card.module';
+import { CustomProductScrollModule } from '../custom-product-scroll/custom-product-scroll.module';
+import { CustomListNavigationModule } from '../../../shared/components/custom-list-navigation/custom-list-navigation.module';
 
 @NgModule({
   declarations: [CustomProductListComponent],
@@ -44,6 +46,8 @@ import { ProductCardModule } from '../product-card/product-card.module';
     OutletModule,
     ProductListModule,
     ProductCardModule,
+    CustomProductScrollModule,
+    CustomListNavigationModule,
   ],
   providers: [
     provideConfig(<ViewConfig>defaultViewConfig),
@@ -55,7 +59,7 @@ import { ProductCardModule } from '../product-card/product-card.module';
         addStart: false,
         addEnd: false,
         addPrevious: true,
-        rangeCount: 1,
+        rangeCount: 3,
         addDots: true,
       },
       cmsComponents: {

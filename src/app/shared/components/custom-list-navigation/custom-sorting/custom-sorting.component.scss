@@ -1,0 +1,16 @@
+@import "src/styles/custom-scss/mixins/media-querys.scss";
+@import "src/styles/custom-scss/variables/variables.scss";
+
+app-custom-sorting {
+  width: 100%;
+  .ng-select .ng-select-container {
+    background-color: $background-grey;
+    border: none;
+    .ng-value-container {
+      justify-content: center;
+    }
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
