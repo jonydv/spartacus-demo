@@ -20,8 +20,6 @@ import { customCheckoutRoutingConfig } from './config/custom-checkout-routing.co
             import('@spartacus/checkout').then((m) => m.CheckoutModule),
         },
       },
-    }),
-    provideConfig(<CmsConfig>{
       cmsComponents: {
         CheckoutDeliveryAddress: {
           component: ShippingAddressComponent,
