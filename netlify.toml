@@ -3,7 +3,9 @@
   command = "npm run prerender"
   functions = "netlify/functions"
   publish = "dist/sap-spartacus-demo/browser"
-
+  [build.bundle]
+    # increase bundle size to 3 MB
+    max_size = 3145728
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
   #[[redirects]]
