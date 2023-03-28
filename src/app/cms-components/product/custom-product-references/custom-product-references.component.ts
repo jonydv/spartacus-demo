@@ -34,22 +34,27 @@ export class CustomProductReferencesComponent
       0: {
         slidesPerView: 1,
         slidesPerGroup: 1,
+        spaceBetween: 0,
       },
       356: {
         slidesPerView: 2,
         slidesPerGroup: 2,
+        spaceBetween: 0,
       },
       526: {
         slidesPerView: 3,
         slidesPerGroup: 3,
+        spaceBetween: 0,
       },
       696: {
         slidesPerView: 3,
         slidesPerGroup: 3,
+        spaceBetween: 0,
       },
       991: {
         slidesPerView: 4,
         slidesPerGroup: 4,
+        spaceBetween: 0,
       },
       1400: {
         slidesPerView: 4,
