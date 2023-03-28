@@ -1,0 +1,102 @@
+@import "src/styles/custom-scss/mixins/media-querys.scss";
+@import "src/styles/custom-scss/variables/variables.scss";
+
+cx-storefront {
+  &.ProductDetailsPageTemplate {
+    main {
+      cx-page-layout {
+        &.ProductDetailsPageTemplate {
+          cx-page-slot {
+            &.Summary {
+              @include mobile {
+                background: $white;
+                cx-product-variants-container,
+                cx-add-to-cart,
+                cx-add-to-wishlist {
+                  .btn-primary {
+                    background-color: $blue;
+                    border-color: $blue;
+                    -webkit-box-shadow: 0 0 0 0 $white;
+                    box-shadow: 0 0 0 0 $white;
+                  }
+                  .cx-action-link {
+                    color: $blue;
+                    &:hover {
+                      color: $blue;
+                      filter: brightness(calc(84 / 100));
+                    }
+                  }
+                  .variant-list li.selected-variant button img {
+                    border: 0.125rem solid $blue;
+                    border-radius: 0.25rem;
+                  }
+                }
+                // cx-product-variants-container {
+                //   .variant-list li.selected-variant button img {
+                //     border: 0.125rem solid $blue;
+                //     border-radius: 0.25rem;
+                //   }
+                // }
+                // cx-add-to-cart {
+                //   .btn-primary {
+                //     background-color: $blue;
+                //     border-color: $blue;
+                //     -webkit-box-shadow: 0 0 0 0 $white;
+                //     box-shadow: 0 0 0 0 $white;
+                //   }
+                // }
+              }
+              @include desktop {
+                padding: 1rem;
+                background: $white;
+                border-radius: 0.25rem;
+                -webkit-box-shadow: 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.25);
+                box-shadow: 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.25);
+                grid-template-columns: 1fr 368px;
+                cx-product-intro {
+                  border-top: $border-light;
+                  border-top-left-radius: 0.5rem;
+                  border-top-right-radius: 0.5rem;
+                }
+                cx-product-summary,
+                cx-product-variants-container,
+                cx-add-to-cart,
+                cx-add-to-wishlist,
+                cx-product-intro {
+                  border-left: $border-light;
+                  border-right: $border-light;
+                  .cx-action-link {
+                    color: $blue;
+                    &:hover {
+                      color: $blue;
+                      filter: brightness(calc(84 / 100));
+                    }
+                  }
+                }
+                cx-product-variants-container {
+                  .variant-list li.selected-variant button img {
+                    border: 0.125rem solid $blue;
+                    border-radius: 0.25rem;
+                  }
+                }
+                cx-add-to-cart {
+                  .btn-primary {
+                    background-color: $blue;
+                    border-color: $blue;
+                    -webkit-box-shadow: 0 0 0 0 $white;
+                    box-shadow: 0 0 0 0 $white;
+                  }
+                }
+                cx-add-to-wishlist {
+                  border-bottom: $border-light;
+                  border-bottom-left-radius: 0.5rem;
+                  border-bottom-right-radius: 0.5rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
