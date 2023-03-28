@@ -34,20 +34,6 @@ cx-storefront {
                     border-radius: 0.25rem;
                   }
                 }
-                // cx-product-variants-container {
-                //   .variant-list li.selected-variant button img {
-                //     border: 0.125rem solid $blue;
-                //     border-radius: 0.25rem;
-                //   }
-                // }
-                // cx-add-to-cart {
-                //   .btn-primary {
-                //     background-color: $blue;
-                //     border-color: $blue;
-                //     -webkit-box-shadow: 0 0 0 0 $white;
-                //     box-shadow: 0 0 0 0 $white;
-                //   }
-                // }
               }
               @include desktop {
                 padding: 1rem;
@@ -96,6 +82,10 @@ cx-storefront {
                   border-bottom-right-radius: 0.5rem;
                 }
               }
+            }
+            &.CrossSelling,
+            &.Tabs {
+              margin-bottom: 1.25rem;
             }
           }
         }

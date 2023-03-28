@@ -11,6 +11,7 @@
     [ngClass]="{ list: fromProductList }"
   ></cx-media>
   <cx-variant-style-icons
+    *ngIf="product?.variantOptions?.length > 0 && !fromReferences"
     [variants]="product?.variantOptions?.slice(0, 4)"
   ></cx-variant-style-icons>
   <div class="product-item__content" *ngIf="!fromProductList; else fromList">

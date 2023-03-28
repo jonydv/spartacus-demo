@@ -10,4 +10,5 @@ export class ProductCardComponent {
   @Input() product!: Product;
   @Input() isMobile: boolean = false;
   @Input() fromProductList: boolean = false;
+  @Input() fromReferences: boolean = false;
 }

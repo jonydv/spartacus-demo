@@ -1,0 +1,33 @@
+<ng-container *ngIf="items$ | async as items">
+  <ng-container *ngIf="items?.length > 0">
+    <ng-container *ngIf="componentData$ | async as data">
+      <div class="product-carousel-container">
+        <h3 class="product-carousel-container__title">{{ data.title }}</h3>
+        <swiper
+          [config]="swiperConfig"
+          [navigation]="{
+            nextEl: '.right-' + data.uid,
+            prevEl: '.left-' + data.uid
+          }"
+          [autoplay]="{ delay: 7000 }"
+          [loop]="true"
+        >
+          <ng-container *ngFor="let item$ of items">
+            <ng-template swiperSlide>
+              <app-product-card
+                [product]="item$ | async"
+                [fromReferences]="true"
+              ></app-product-card>
+            </ng-template>
+          </ng-container>
+        </swiper>
+        <div class="left">
+          <cx-icon [class]="'left-' + data.uid" type="ARROW_LEFT"></cx-icon>
+        </div>
+        <div class="right">
+          <cx-icon [class]="'right-' + data.uid" type="ARROW_RIGHT"></cx-icon>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+</ng-container>
