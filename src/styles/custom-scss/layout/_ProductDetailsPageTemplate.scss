@@ -1,5 +1,8 @@
 @import "src/styles/custom-scss/mixins/media-querys.scss";
 @import "src/styles/custom-scss/variables/variables.scss";
+:root {
+  --cx-color-primary: #3483fa;
+}
 
 cx-storefront {
   &.ProductDetailsPageTemplate {
