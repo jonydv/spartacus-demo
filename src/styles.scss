@@ -8,7 +8,9 @@ $styleVersion: 4.3;
 
 :root {
   --cx-page-width-max: 75rem;
+  --cx-color-primary: #3483fa;
 }
+
 html,
 body {
   font-family: "Roboto", sans-serif;
@@ -28,6 +30,13 @@ a {
 }
 a:hover {
   color: $primary-light-hover;
+}
+.btn-primary.focus,
+.btn-primary:focus,
+.btn-primary:hover {
+  color: #fff;
+  background-color: var(--cx-color-primary);
+  border-color: var(--cx-color-primary);
 }
 cx-active-facets a {
   border: 1px solid $primary-light;

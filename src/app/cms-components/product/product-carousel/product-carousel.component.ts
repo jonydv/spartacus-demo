@@ -42,16 +42,16 @@ export class CustomProductCarouselComponent
         slidesPerGroup: 2,
       },
       526: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
+        slidesPerView: 2,
+        slidesPerGroup: 2,
       },
       696: {
         slidesPerView: 3,
         slidesPerGroup: 3,
       },
       991: {
-        slidesPerView: 4,
-        slidesPerGroup: 4,
+        slidesPerView: 3,
+        slidesPerGroup: 3,
       },
       1400: {
         slidesPerView: 5,
