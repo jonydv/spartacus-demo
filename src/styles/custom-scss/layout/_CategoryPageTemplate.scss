@@ -1,0 +1,25 @@
+@import "src/styles/custom-scss/mixins/media-querys.scss";
+@import "src/styles/custom-scss/variables/variables.scss";
+cx-page-layout {
+  &.CategoryPageTemplate {
+    cx-page-slot {
+      &.Section2 {
+        @include mobile {
+          app-custom-banner {
+            flex-basis: 100%;
+            margin-bottom: 0.85rem;
+            cx-generic-link {
+              cx-media {
+                img {
+                  display: flex;
+                  height: auto;
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
