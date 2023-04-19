@@ -6,9 +6,13 @@ cx-page-layout {
     cx-page-slot {
       &.SiteLogo {
         cx-media {
-          background: url("../../../assets/images/site-logo.png");
-          width: 134px;
+          background: center / contain no-repeat
+            url("../../../assets/images/site-logo.png");
+          width: 34px;
           height: 34px;
+          @include mobile {
+            width: 68px;
+          }
           img {
             display: none;
           }
