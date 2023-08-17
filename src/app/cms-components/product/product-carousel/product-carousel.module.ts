@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CustomProductCarouselComponent } from './product-carousel.component';
-import { CmsConfig, provideConfig } from '@spartacus/core';
+import {
+  CmsConfig,
+  DeferLoadingStrategy,
+  provideConfig,
+} from '@spartacus/core';
 import { SwiperModule } from 'swiper/angular';
 import { MediaModule, IconModule } from '@spartacus/storefront';
 import { ProductCardModule } from '../product-card/product-card.module';
@@ -19,7 +23,11 @@ import { ProductCardModule } from '../product-card/product-card.module';
     provideConfig(<CmsConfig>{
       cmsComponents: {
         ProductCarouselComponent: {
-          component: CustomProductCarouselComponent,
+          component: () =>
+            import('./product-carousel.component').then(
+              (m) => m.CustomProductCarouselComponent
+            ),
+          deferLoading: DeferLoadingStrategy.DEFER,
         },
       },
     }),

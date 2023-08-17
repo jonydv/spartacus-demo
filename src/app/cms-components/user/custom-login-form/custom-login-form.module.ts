@@ -11,6 +11,7 @@ import {
   AuthService,
   GlobalMessageService,
   WindowRef,
+  DeferLoadingStrategy,
 } from '@spartacus/core';
 import {
   FormErrorsModule,
@@ -36,7 +37,11 @@ import { LoginFormComponentService } from '@spartacus/user/account/components';
     provideConfig(<CmsConfig>{
       cmsComponents: {
         ReturningCustomerLoginComponent: {
-          component: CustomLoginFormComponent,
+          component: () =>
+            import('./custom-login-form.component').then(
+              (m) => m.CustomLoginFormComponent
+            ),
+          deferLoading: DeferLoadingStrategy.DEFER,
           providers: [
             {
               provide: LoginFormComponentService,
@@ -48,6 +53,18 @@ import { LoginFormComponentService } from '@spartacus/user/account/components';
       },
     }),
   ],
+  /*
+
+        cmsComponents: {
+        ProductCarouselComponent: {
+          component: () =>
+            import('./custom-product-carousel.component').then(
+              (m) => m.CustomProductCarouselComponent
+            ),
+          deferLoading: DeferLoadingStrategy.DEFER,
+        },
+  */
+
   exports: [CustomLoginFormComponent],
 })
 export class CustomLoginFormModule {}

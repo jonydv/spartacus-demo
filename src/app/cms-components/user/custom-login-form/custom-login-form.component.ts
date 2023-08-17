@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { ModalService } from '@spartacus/storefront';
 import {
   LoginFormComponent,
@@ -13,7 +13,7 @@ import {
 })
 export class CustomLoginFormComponent
   extends LoginFormComponent
-  implements OnInit
+  implements OnInit, OnDestroy
 {
   fromModal: boolean = false;
   constructor(
@@ -29,5 +29,10 @@ export class CustomLoginFormComponent
 
   closeModal(reason: string) {
     this.modalService.closeActiveModal(reason);
+  }
+
+  ngOnDestroy(): void {
+    this.form.reset();
+    this.form.markAsUntouched();
   }
 }
